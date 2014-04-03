@@ -1,0 +1,16 @@
+#Standard Eclipse project files/folders
+.project
+.classpath
+.settings
+
+#JVM crash reports
+hs_err_pid*
+
+#Binary files/libraries and folders
+*.class
+*.jar
+*.apk
+bin/
+
+#Generated content(Android)
+gen/
