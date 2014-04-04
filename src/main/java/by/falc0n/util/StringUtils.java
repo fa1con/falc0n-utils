@@ -7,7 +7,7 @@ package by.falc0n.util;
  * @version 1.0
  * 
  */
-public final class StringUtil {
+public final class StringUtils {
 
 	/**
 	 * Checks whether the specified value is blank: contains only whitespace
@@ -23,18 +23,16 @@ public final class StringUtil {
 		boolean blank = true;
 		int length = value.length();
 
-		if (length > 0) {
-			for (int i = 0; i < length; i++) {
-				if (!Character.isWhitespace(value.charAt(i))) {
-					blank = false;
-					break;
-				}
+		for (int i = 0; i < length; i++) {
+			if (!Character.isWhitespace(value.charAt(i))) {
+				blank = false;
+				break;
 			}
 		}
 		return blank;
 	}
 
-	private StringUtil() {
+	private StringUtils() {
 		super();
 	}
 

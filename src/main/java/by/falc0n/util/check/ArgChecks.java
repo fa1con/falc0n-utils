@@ -1,20 +1,18 @@
 package by.falc0n.util.check;
 
-import by.falc0n.util.ArrayUtil;
-import by.falc0n.util.StringUtil;
-
-
+import by.falc0n.util.ArrayUtils;
+import by.falc0n.util.StringUtils;
 
 /**
- * Contains a set of utility methods to validate arguments. All the methods are
- * intended to throw an {@link IllegalArgumentException} exception if a
- * validation condition of a method is not met.
+ * Contains a set of utility methods (<i>checks</i>) to validate arguments. All
+ * the methods are intended to throw an {@link IllegalArgumentException}
+ * exception if a validation condition of a method is not met.
  * 
  * @author falc0n
  * @version 1.0
  * 
  */
-public final class ArgCheck {
+public final class ArgChecks {
 
 	public static final void condition(boolean result, String msg) {
 		if (!result) {
@@ -31,7 +29,7 @@ public final class ArgCheck {
 	public static final void condition(boolean result, String msg, byte... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayUtils.toObjArray(args)));
 		}
 	}
 
@@ -45,7 +43,7 @@ public final class ArgCheck {
 			short... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayUtils.toObjArray(args)));
 		}
 	}
 
@@ -58,7 +56,7 @@ public final class ArgCheck {
 	public static final void condition(boolean result, String msg, int... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayUtils.toObjArray(args)));
 		}
 	}
 
@@ -71,7 +69,7 @@ public final class ArgCheck {
 	public static final void condition(boolean result, String msg, long... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayUtils.toObjArray(args)));
 		}
 	}
 
@@ -85,7 +83,7 @@ public final class ArgCheck {
 			float... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayUtils.toObjArray(args)));
 		}
 	}
 
@@ -99,7 +97,7 @@ public final class ArgCheck {
 			double... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayUtils.toObjArray(args)));
 		}
 	}
 
@@ -112,7 +110,7 @@ public final class ArgCheck {
 	public static final void condition(boolean result, String msg, char... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayUtils.toObjArray(args)));
 		}
 	}
 
@@ -708,15 +706,16 @@ public final class ArgCheck {
 			throw new IllegalArgumentException(String.format(msg, arg, value));
 		}
 	}
-	
+
 	/*
-	public static final void unequal(byte arg, String msg, byte... values) {
-		if (ArrayUtil.contains(values, arg)) {
-			throw new IllegalArgumentException(String.format(msg, arg,
-					(Object[]) ArrayUtil.toObjArray(values))); // Doesn't work: ArrayUtil.add needed
-		}
-	}
-   */
+	 * public static final void unequal(byte arg, String msg, byte... values) {
+	 * if (ArrayUtil.contains(values, arg)) { throw new
+	 * IllegalArgumentException(String.format(msg, arg, (Object[])
+	 * ArrayUtil.toObjArray(values))); // Doesn't work: ArrayUtil.add needed } }
+	 */
+	// TODO add varargs versions of the unequal methods
+	// TODO add array versions of the unequal methods
+	// TODO add oneOf methods(incl array versions)
 
 	public static final void range(byte arg, byte min, byte max, String msg) {
 		if ((arg < min) || (arg > max)) {
@@ -1022,10 +1021,10 @@ public final class ArgCheck {
 	}
 
 	public static final void notBlank(CharSequence arg, String msg) {
-		objCondition(!StringUtil.isBlank(arg), msg, arg);
+		objCondition(!StringUtils.isBlank(arg), msg, arg);
 	}
 
-	private ArgCheck() {
+	private ArgChecks() {
 		super();
 	}
 
