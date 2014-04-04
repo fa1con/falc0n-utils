@@ -1,7 +1,7 @@
 package by.falc0n.util;
 
 /**
- * Provides a set of utility methods for working with java strings.
+ * Contains a set of utility methods for working with java strings.
  * 
  * @author falc0n
  * @version 1.0
