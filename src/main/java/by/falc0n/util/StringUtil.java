@@ -7,7 +7,7 @@ package by.falc0n.util;
  * @version 1.0
  * 
  */
-public final class StringUtils {
+public final class StringUtil {
 
 	/**
 	 * Checks whether the specified value is blank: contains only whitespace
@@ -32,7 +32,7 @@ public final class StringUtils {
 		return blank;
 	}
 
-	private StringUtils() {
+	private StringUtil() {
 		super();
 	}
 

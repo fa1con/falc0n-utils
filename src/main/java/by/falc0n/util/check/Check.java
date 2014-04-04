@@ -1,6 +1,6 @@
 package by.falc0n.util.check;
 
-public final class Checks {
+public final class Check {
 	
 	public static final void notNull(Object obj, String msg) {
 		if (obj == null) {
@@ -8,7 +8,7 @@ public final class Checks {
 		}
 	}
 
-	private Checks() {
+	private Check() {
 		super();
 	}
 

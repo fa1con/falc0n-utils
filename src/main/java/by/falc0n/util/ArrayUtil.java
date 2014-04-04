@@ -8,7 +8,7 @@ package by.falc0n.util;
  * @version 1.0
  * 
  */
-public final class ArrayUtils {
+public final class ArrayUtil {
 
 	/**
 	 * An empty {@code byte} array.
@@ -348,7 +348,7 @@ public final class ArrayUtils {
 		boolean result = false;
 
 		for (int i = 0; i < array.length; i++) {
-			if (ObjectUtils.equalOrNull(array[i], value)) {
+			if (ObjectUtil.equalOrNull(array[i], value)) {
 				result = true;
 				break;
 			}
@@ -564,7 +564,7 @@ public final class ArrayUtils {
 		return objArray;
 	}
 
-	private ArrayUtils() {
+	private ArrayUtil() {
 		super();
 	}
 

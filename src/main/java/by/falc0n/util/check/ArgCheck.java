@@ -1,7 +1,7 @@
 package by.falc0n.util.check;
 
-import by.falc0n.util.ArrayUtils;
-import by.falc0n.util.StringUtils;
+import by.falc0n.util.ArrayUtil;
+import by.falc0n.util.StringUtil;
 
 /**
  * Contains a set of utility methods (<i>checks</i>) to validate arguments. All
@@ -12,7 +12,7 @@ import by.falc0n.util.StringUtils;
  * @version 1.0
  * 
  */
-public final class ArgChecks {
+public final class ArgCheck {
 
 	public static final void condition(boolean result, String msg) {
 		if (!result) {
@@ -29,7 +29,7 @@ public final class ArgChecks {
 	public static final void condition(boolean result, String msg, byte... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtils.toObjArray(args)));
+					(Object[]) ArrayUtil.toObjArray(args)));
 		}
 	}
 
@@ -43,7 +43,7 @@ public final class ArgChecks {
 			short... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtils.toObjArray(args)));
+					(Object[]) ArrayUtil.toObjArray(args)));
 		}
 	}
 
@@ -56,7 +56,7 @@ public final class ArgChecks {
 	public static final void condition(boolean result, String msg, int... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtils.toObjArray(args)));
+					(Object[]) ArrayUtil.toObjArray(args)));
 		}
 	}
 
@@ -69,7 +69,7 @@ public final class ArgChecks {
 	public static final void condition(boolean result, String msg, long... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtils.toObjArray(args)));
+					(Object[]) ArrayUtil.toObjArray(args)));
 		}
 	}
 
@@ -83,7 +83,7 @@ public final class ArgChecks {
 			float... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtils.toObjArray(args)));
+					(Object[]) ArrayUtil.toObjArray(args)));
 		}
 	}
 
@@ -97,7 +97,7 @@ public final class ArgChecks {
 			double... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtils.toObjArray(args)));
+					(Object[]) ArrayUtil.toObjArray(args)));
 		}
 	}
 
@@ -110,7 +110,7 @@ public final class ArgChecks {
 	public static final void condition(boolean result, String msg, char... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtils.toObjArray(args)));
+					(Object[]) ArrayUtil.toObjArray(args)));
 		}
 	}
 
@@ -1021,10 +1021,10 @@ public final class ArgChecks {
 	}
 
 	public static final void notBlank(CharSequence arg, String msg) {
-		objCondition(!StringUtils.isBlank(arg), msg, arg);
+		objCondition(!StringUtil.isBlank(arg), msg, arg);
 	}
 
-	private ArgChecks() {
+	private ArgCheck() {
 		super();
 	}
 

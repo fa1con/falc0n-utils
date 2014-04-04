@@ -8,7 +8,7 @@ package by.falc0n.util;
  * @version 1.0
  * 
  */
-public final class ObjectUtils {
+public final class ObjectUtil {
 
 	/**
 	 * Checks whether the specified objects are equal or both {@code null}.
@@ -26,7 +26,7 @@ public final class ObjectUtils {
 		return ((obj1 != null) && (obj1.equals(obj2))) || (obj1 == obj2);
 	}
 
-	private ObjectUtils() {
+	private ObjectUtil() {
 		super();
 	}
 
