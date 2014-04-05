@@ -1,14 +1,13 @@
 package by.falc0n.util;
 
 /**
- * Contains a set of basic utility methods related to pure operations with
- * objects.
+ * Contains a set of extension methods related to pure operations with objects.
  * 
  * @author falc0n
  * @version 1.0
  * 
  */
-public final class ObjectUtil {
+public final class ObjectExt {
 
 	/**
 	 * Checks whether the specified objects are equal or both {@code null}.
@@ -23,10 +22,11 @@ public final class ObjectUtil {
 	 * @since 1.0
 	 */
 	public static final boolean equalOrNull(Object obj1, Object obj2) {
-		return ((obj1 != null) && (obj1.equals(obj2))) || (obj1 == obj2);
+		return ((obj1 != null) && (obj2 != null)) ? obj1.equals(obj2)
+				: (obj1 == obj2);
 	}
 
-	private ObjectUtil() {
+	private ObjectExt() {
 		super();
 	}
 

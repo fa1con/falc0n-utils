@@ -1,14 +1,14 @@
 package by.falc0n.util;
 
 /**
- * Contains a set of utility methods and constants to operate with arrays
+ * Contains a set of extension methods and constants to operate with arrays
  * (primitive and object).
  * 
  * @author falc0n
  * @version 1.0
  * 
  */
-public final class ArrayUtil {
+public final class ArrayExt {
 
 	/**
 	 * An empty {@code byte} array.
@@ -71,63 +71,63 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Byte[] EMPTY_BYTE_OBJ_ARRAY = new Byte[0];
+	public static final Byte[] EMPTY_BYTE_OBJECT_ARRAY = new Byte[0];
 
 	/**
 	 * An empty {@link Short} array.
 	 * 
 	 * @since 1.0
 	 */
-	public static final Short[] EMPTY_SHORT_OBJ_ARRAY = new Short[0];
+	public static final Short[] EMPTY_SHORT_OBJECT_ARRAY = new Short[0];
 
 	/**
 	 * An empty {@link Integer} array.
 	 * 
 	 * @since 1.0
 	 */
-	public static final Integer[] EMPTY_INT_OBJ_ARRAY = new Integer[0];
+	public static final Integer[] EMPTY_INT_OBJECT_ARRAY = new Integer[0];
 
 	/**
 	 * An empty {@link Long} array.
 	 * 
 	 * @since 1.0
 	 */
-	public static final Long[] EMPTY_LONG_OBJ_ARRAY = new Long[0];
+	public static final Long[] EMPTY_LONG_OBJECT_ARRAY = new Long[0];
 
 	/**
 	 * An empty {@link Float} array.
 	 * 
 	 * @since 1.0
 	 */
-	public static final Float[] EMPTY_FLOAT_OBJ_ARRAY = new Float[0];
+	public static final Float[] EMPTY_FLOAT_OBJECT_ARRAY = new Float[0];
 
 	/**
 	 * An empty {@link Double} array.
 	 * 
 	 * @since 1.0
 	 */
-	public static final Double[] EMPTY_DOUBLE_OBJ_ARRAY = new Double[0];
+	public static final Double[] EMPTY_DOUBLE_OBJECT_ARRAY = new Double[0];
 
 	/**
 	 * An empty {@link Character} array.
 	 * 
 	 * @since 1.0
 	 */
-	public static final Character[] EMPTY_CHAR_OBJ_ARRAY = new Character[0];
+	public static final Character[] EMPTY_CHAR_OBJECT_ARRAY = new Character[0];
 
 	/**
 	 * An empty {@link Boolean} array.
 	 * 
 	 * @since 1.0
 	 */
-	public static final Boolean[] EMPTY_BOOLEAN_OBJ_ARRAY = new Boolean[0];
+	public static final Boolean[] EMPTY_BOOLEAN_OBJECT_ARRAY = new Boolean[0];
 
 	/**
-	 * An empty {@link String} array.
+	 * An empty object array.
 	 * 
 	 * @since 1.0
 	 */
-	public static final String[] EMPTY_STRING_ARRAY = new String[0];
+	public static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
 
 	/**
 	 * Checks whether the {@code byte} array contains the specified value. The
@@ -348,7 +348,7 @@ public final class ArrayUtil {
 		boolean result = false;
 
 		for (int i = 0; i < array.length; i++) {
-			if (ObjectUtil.equalOrNull(array[i], value)) {
+			if (ObjectExt.equalOrNull(array[i], value)) {
 				result = true;
 				break;
 			}
@@ -366,7 +366,7 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Byte[] toObjArray(byte[] array) {
+	public static final Byte[] toObjectArray(byte[] array) {
 		Byte[] objArray = null;
 
 		if (array != null) {
@@ -376,7 +376,7 @@ public final class ArrayUtil {
 					objArray[i] = array[i];
 				}
 			} else {
-				objArray = EMPTY_BYTE_OBJ_ARRAY;
+				objArray = EMPTY_BYTE_OBJECT_ARRAY;
 			}
 		}
 		return objArray;
@@ -392,7 +392,7 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Short[] toObjArray(short[] array) {
+	public static final Short[] toObjectArray(short[] array) {
 		Short[] objArray = null;
 
 		if (array != null) {
@@ -402,7 +402,7 @@ public final class ArrayUtil {
 					objArray[i] = array[i];
 				}
 			} else {
-				objArray = EMPTY_SHORT_OBJ_ARRAY;
+				objArray = EMPTY_SHORT_OBJECT_ARRAY;
 			}
 		}
 		return objArray;
@@ -418,7 +418,7 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Integer[] toObjArray(int[] array) {
+	public static final Integer[] toObjectArray(int[] array) {
 		Integer[] objArray = null;
 
 		if (array != null) {
@@ -428,7 +428,7 @@ public final class ArrayUtil {
 					objArray[i] = array[i];
 				}
 			} else {
-				objArray = EMPTY_INT_OBJ_ARRAY;
+				objArray = EMPTY_INT_OBJECT_ARRAY;
 			}
 		}
 		return objArray;
@@ -444,7 +444,7 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Long[] toObjArray(long[] array) {
+	public static final Long[] toObjectArray(long[] array) {
 		Long[] objArray = null;
 
 		if (array != null) {
@@ -454,7 +454,7 @@ public final class ArrayUtil {
 					objArray[i] = array[i];
 				}
 			} else {
-				objArray = EMPTY_LONG_OBJ_ARRAY;
+				objArray = EMPTY_LONG_OBJECT_ARRAY;
 			}
 		}
 		return objArray;
@@ -470,7 +470,7 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Float[] toObjArray(float[] array) {
+	public static final Float[] toObjectArray(float[] array) {
 		Float[] objArray = null;
 
 		if (array != null) {
@@ -480,7 +480,7 @@ public final class ArrayUtil {
 					objArray[i] = array[i];
 				}
 			} else {
-				objArray = EMPTY_FLOAT_OBJ_ARRAY;
+				objArray = EMPTY_FLOAT_OBJECT_ARRAY;
 			}
 		}
 		return objArray;
@@ -496,7 +496,7 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Double[] toObjArray(double[] array) {
+	public static final Double[] toObjectArray(double[] array) {
 		Double[] objArray = null;
 
 		if (array != null) {
@@ -506,7 +506,7 @@ public final class ArrayUtil {
 					objArray[i] = array[i];
 				}
 			} else {
-				objArray = EMPTY_DOUBLE_OBJ_ARRAY;
+				objArray = EMPTY_DOUBLE_OBJECT_ARRAY;
 			}
 		}
 		return objArray;
@@ -522,7 +522,7 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Character[] toObjArray(char[] array) {
+	public static final Character[] toObjectArray(char[] array) {
 		Character[] objArray = null;
 
 		if (array != null) {
@@ -532,7 +532,7 @@ public final class ArrayUtil {
 					objArray[i] = array[i];
 				}
 			} else {
-				objArray = EMPTY_CHAR_OBJ_ARRAY;
+				objArray = EMPTY_CHAR_OBJECT_ARRAY;
 			}
 		}
 		return objArray;
@@ -548,7 +548,7 @@ public final class ArrayUtil {
 	 * 
 	 * @since 1.0
 	 */
-	public static final Boolean[] toObjArray(boolean[] array) {
+	public static final Boolean[] toObjectArray(boolean[] array) {
 		Boolean[] objArray = null;
 
 		if (array != null) {
@@ -558,13 +558,45 @@ public final class ArrayUtil {
 					objArray[i] = array[i];
 				}
 			} else {
-				objArray = EMPTY_BOOLEAN_OBJ_ARRAY;
+				objArray = EMPTY_BOOLEAN_OBJECT_ARRAY;
 			}
 		}
 		return objArray;
 	}
+	
+	public static final byte[] toPrimitiveArray(Byte[] array) {
+		byte[] primArray = null;
 
-	private ArrayUtil() {
+		if (array != null) {
+			if (array.length > 0) {
+				primArray = new byte[array.length];
+				for (int i = 0; i < array.length; i++) {
+					primArray[i] = array[i];
+				}
+			} else {
+				primArray = EMPTY_BYTE_ARRAY;
+			}
+		}
+		return primArray;
+	}
+
+	public static final byte[] toPrimitiveArray(Byte[] array, byte nullValue) {
+		byte[] primArray = null;
+
+		if (array != null) {
+			if (array.length > 0) {
+				primArray = new byte[array.length];
+				for (int i = 0; i < array.length; i++) {
+					primArray[i] = (array[i] != null) ? array[i] : nullValue;
+				}
+			} else {
+				primArray = EMPTY_BYTE_ARRAY;
+			}
+		}
+		return primArray;
+	}
+
+	private ArrayExt() {
 		super();
 	}
 

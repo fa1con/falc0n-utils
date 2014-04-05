@@ -1,12 +1,12 @@
 package by.falc0n.util.check;
 
-import by.falc0n.util.ArrayUtil;
-import by.falc0n.util.StringUtil;
+import by.falc0n.util.ArrayExt;
+import by.falc0n.util.StringExt;
 
 /**
- * Contains a set of utility methods (<i>checks</i>) to validate arguments. All
- * the methods are intended to throw an {@link IllegalArgumentException}
- * exception if a validation condition of a method is not met.
+ * Contains a set of utility methods to validate arguments. All the methods are
+ * intended to throw an {@link IllegalArgumentException} exception if a
+ * validation condition of a method is not met.
  * 
  * @author falc0n
  * @version 1.0
@@ -29,7 +29,7 @@ public final class ArgCheck {
 	public static final void condition(boolean result, String msg, byte... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayExt.toObjectArray(args)));
 		}
 	}
 
@@ -43,7 +43,7 @@ public final class ArgCheck {
 			short... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayExt.toObjectArray(args)));
 		}
 	}
 
@@ -56,7 +56,7 @@ public final class ArgCheck {
 	public static final void condition(boolean result, String msg, int... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayExt.toObjectArray(args)));
 		}
 	}
 
@@ -69,7 +69,7 @@ public final class ArgCheck {
 	public static final void condition(boolean result, String msg, long... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayExt.toObjectArray(args)));
 		}
 	}
 
@@ -83,7 +83,7 @@ public final class ArgCheck {
 			float... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayExt.toObjectArray(args)));
 		}
 	}
 
@@ -97,7 +97,7 @@ public final class ArgCheck {
 			double... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayExt.toObjectArray(args)));
 		}
 	}
 
@@ -110,7 +110,7 @@ public final class ArgCheck {
 	public static final void condition(boolean result, String msg, char... args) {
 		if (!result) {
 			throw new IllegalArgumentException(String.format(msg,
-					(Object[]) ArrayUtil.toObjArray(args)));
+					(Object[]) ArrayExt.toObjectArray(args)));
 		}
 	}
 
@@ -1020,8 +1020,8 @@ public final class ArgCheck {
 		}
 	}
 
-	public static final void notBlank(CharSequence arg, String msg) {
-		objCondition(!StringUtil.isBlank(arg), msg, arg);
+	public static final void notBlank(String arg, String msg) {
+		objCondition(!StringExt.isBlank(arg), msg, arg);
 	}
 
 	private ArgCheck() {
