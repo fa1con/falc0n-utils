@@ -10,6 +10,24 @@ package by.falc0n.util;
 public final class StringExt {
 
 	/**
+	 * Trims the specified string value. If the result is an empty string -
+	 * returns {@code null} instead. The value can be {@code null}.
+	 * 
+	 * @param value
+	 *            - a string value to trim
+	 * @return a trimmed value or {@code null}
+	 * 
+	 * @since 1.0
+	 */
+	public static final String trimToNull(String value) {
+		if (value != null) {
+			value = value.trim();
+			value = (value.equals("")) ? null : value;
+		}
+		return value;
+	}
+
+	/**
 	 * Checks whether the specified string value is blank: contains only
 	 * whitespace characters or is empty. The value shouldn't be {@code null}.
 	 * 
